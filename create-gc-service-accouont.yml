@@ -6,7 +6,7 @@
 
   tasks:
 
-    - name: check of the service account exist. 
+    - name: check if the service account exist. 
       gcp_iam_service_account_info:
         project: "{{ gcp_project }}"
         auth_kind: serviceaccount
@@ -14,7 +14,7 @@
 
     - name: Print return information from the previous task
       ansible.builtin.debug:
-        var: serviceaccountinfo
+        msg: serviceaccountinfo
         verbosity: 2
 
    
