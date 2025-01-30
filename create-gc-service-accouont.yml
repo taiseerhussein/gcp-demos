@@ -15,5 +15,6 @@
     - name: Print return information from the previous task
       ansible.builtin.debug:
         var: serviceaccountinfo
+      when: '"aapongcp-th01-sa" in serviceaccountinfo'
 
    
