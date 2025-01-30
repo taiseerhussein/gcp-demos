@@ -10,7 +10,6 @@
       gcp_iam_service_account_info:
         project: "{{ gcp_project }}"
         auth_kind: serviceaccount
-        service_account_file: "/tmp/auth.pem"
       register: serviceaccountinfo
 
     - name: Print return information from the previous task
