@@ -1,0 +1,21 @@
+---
+- name: Create GCP Service Account 
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+
+    - name: check of the service account exist. 
+      gcp_iam_service_account_info:
+        project: "{{ gcp_project }}"
+        auth_kind: serviceaccount
+        service_account_file: "/tmp/auth.pem"
+      register: serviceaccountinfo
+
+    - name: Print return information from the previous task
+      ansible.builtin.debug:
+        var: serviceaccountinfo
+        verbosity: 2
+
+   
