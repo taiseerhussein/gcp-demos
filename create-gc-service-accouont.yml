@@ -24,6 +24,7 @@
         project: "{{ gcp_project }}"
         auth_kind: serviceaccount
         state: present
+      when: serviceaccountinfo.resources[2].email.find('sa-th-01-sa') == 1
     
 
    
