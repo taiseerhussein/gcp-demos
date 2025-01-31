@@ -14,7 +14,8 @@
 
     - name: Print return information from the previous task
       ansible.builtin.debug:
-        var: {{ item.email }}
+        msg: {{ item.email }}
+      loop: serviceaccountinfo.resources
     
     - name: create a service account
       google.cloud.gcp_iam_service_account:
