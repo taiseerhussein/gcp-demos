@@ -14,7 +14,7 @@
 
     - name: Print return information from the previous task
       ansible.builtin.debug:
-        msg: {{ item.email }}
+        msg: "{{ item.email }}"
       loop: serviceaccountinfo.resources
     
     - name: create a service account
