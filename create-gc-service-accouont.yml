@@ -14,7 +14,7 @@
 
     - name: Print return information from the previous task
       ansible.builtin.debug:
-        var: serviceaccountinfo.resources[0].email
+        var: serviceaccountinfo
       when: serviceaccountinfo.resources[1].email.find('aapongcp-th01-sa') != 1
     
     - name: create a service account
