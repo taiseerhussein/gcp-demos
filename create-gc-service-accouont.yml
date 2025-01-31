@@ -15,7 +15,7 @@
     - name: Print return information from the previous task
       ansible.builtin.debug:
         msg: "{{ item.email }}"
-      loop: serviceaccountinfo.resources
+      loop: "{{ serviceaccountinfo.resources }}"
     
     - name: create a service account
       google.cloud.gcp_iam_service_account:
@@ -24,7 +24,7 @@
         project: "{{ gcp_project }}"
         auth_kind: serviceaccount
         state: present
-      loop: serviceaccountinfo.resources
+      loop: "{{ serviceaccountinfo.resources }}"
       when: item.email.find('sa-th-01-sa') == 1
     
 
