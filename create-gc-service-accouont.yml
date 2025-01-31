@@ -19,7 +19,7 @@
     
     - name: create a service account
       google.cloud.gcp_iam_service_account:
-        name: sa-{{ sa_name }}
+        name: sa-th-01-sa
         display_name: My Ansible test key
         project: "{{ gcp_project }}"
         auth_kind: serviceaccount
