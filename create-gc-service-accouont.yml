@@ -14,8 +14,8 @@
 
     - name: Print return information from the previous task
       ansible.builtin.debug:
-        var: serviceaccountinfo
-      when: serviceaccountinfo.resources.email.find[0]('aapongcp-th01-sa') != 1
+        var: serviceaccountinfo.resources[0].email
+      # when: serviceaccountinfo.resources.email.find[0]('aapongcp-th01-sa') != 1
     
     - name: create a service account
       google.cloud.gcp_iam_service_account:
