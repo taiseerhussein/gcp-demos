@@ -19,7 +19,7 @@
     
     - name: create a service account
       google.cloud.gcp_iam_service_account:
-        name: sa-{{ resource_name.split("-")[-1] }}@graphite-playground.google.com.iam.gserviceaccount.com
+        name: sa-{{ sa_name }}
         display_name: My Ansible test key
         project: "{{ gcp_project }}"
         auth_kind: serviceaccount
