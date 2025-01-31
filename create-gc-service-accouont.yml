@@ -15,7 +15,7 @@
     - name: Print return information from the previous task
       ansible.builtin.debug:
         var: serviceaccountinfo
-      when: '"aapongcp-th01-sa" in serviceaccountinfo'
+      when: '"aapongcp-th01-sa" in '{{ serviceaccountinfo.stdout }}''
     
     - name: create a service account
       google.cloud.gcp_iam_service_account:
