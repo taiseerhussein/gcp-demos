@@ -24,8 +24,6 @@
         project: "{{ gcp_project }}"
         auth_kind: serviceaccount
         state: present
-      loop: "{{ serviceaccountinfo.resources }}"
-      when: 'item.email.find(gcp_serviceaccount_name) == 1'
     
 
    
